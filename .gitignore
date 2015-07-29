@@ -1,5 +1,5 @@
 # Ignore these files
-/.idea
+.idea
 target
 .settings
 .project
