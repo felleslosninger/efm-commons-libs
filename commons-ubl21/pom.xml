@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-	<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
     <groupId>no.difi.commons</groupId>
     <artifactId>commons-ubl21</artifactId>
     <version>0.9.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-	<name>commons-ubl21</name>
-	<description>Universal Business Language (UBL) 2.1 artifacts for Java.</description>
+    <name>commons-ubl21</name>
+    <description>Universal Business Language (UBL) 2.1 artifacts for Java.</description>
     <url>https://github.com/difi/commons-libs/commons-ubl21</url>
 
     <scm>
@@ -48,7 +48,7 @@
         </license>
     </licenses>
 	
-	<properties>
+    <properties>
         <java.encoding>UTF-8</java.encoding>
         <java.version>1.7</java.version>
     </properties>
@@ -76,7 +76,7 @@
             <plugin>
                 <groupId>org.jvnet.jaxb2.maven2</groupId>
                 <artifactId>maven-jaxb2-plugin</artifactId>
-				<version>0.12.3</version>
+                <version>0.12.3</version>
                 <executions>
                     <execution>
                         <id>xsd</id>
@@ -113,9 +113,9 @@
                         </goals>
                     </execution>
                 </executions>
-				<configuration>
+                <configuration>
                     <encoding>${java.encoding}</encoding>
-				</configuration>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -143,7 +143,7 @@
         </pluginManagement>
     </build>
 
-	<distributionManagement>
+    <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
