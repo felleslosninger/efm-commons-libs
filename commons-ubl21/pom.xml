@@ -5,7 +5,7 @@
 
     <groupId>no.difi.commons</groupId>
     <artifactId>commons-ubl21</artifactId>
-    <version>0.9.0</version>
+    <version>0.9.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
 	<name>commons-ubl21</name>
@@ -13,7 +13,7 @@
     <url>https://github.com/difi/commons-libs/commons-ubl21</url>
 
     <scm>
-        <tag>commons-ubl21-0.9.0</tag>
+        <tag>HEAD</tag>
         <url>https://github.com/difi/commons-libs</url>
         <connection>scm:git:https://github.com/difi/commons-libs.git</connection>
         <developerConnection>scm:git:git@github.com:difi/commons-libs.git</developerConnection>
