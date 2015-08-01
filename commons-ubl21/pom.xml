@@ -8,7 +8,7 @@
     <version>0.9.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>commons-ubl21</name>
+    <name>Universal Business Language (UBL) 2.1</name>
     <description>Universal Business Language (UBL) 2.1 artifacts for Java.</description>
     <url>https://github.com/difi/commons-libs/commons-ubl21</url>
 

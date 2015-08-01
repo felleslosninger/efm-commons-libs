@@ -8,8 +8,11 @@
     <version>0.9.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>commons-schematron</name>
-    <description>Schematron XSLT2 artifacts.</description>
+    <name>Schematron</name>
+    <description>
+		Transformer to transform schematron files to XSLT files.
+		Contains all XSLT2 artifacts for Schematron.
+	</description>
     <url>https://github.com/difi/commons-libs</url>
 
     <scm>
