@@ -6,7 +6,7 @@
 <dependency>
 	<groupId>no.difi.commons</groupId>
 	<artifactId>commons-schematron</artifactId>
-	<version>0.9.1</version>
+	<version>0.9.2</version>
 </dependency>
 ```
 
