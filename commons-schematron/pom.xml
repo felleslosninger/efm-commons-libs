@@ -53,6 +53,7 @@
     <properties>
         <java.encoding>UTF-8</java.encoding>
         <java.version>1.7</java.version>
+        <saxon.version>9.6.0-7</saxon.version>
     </properties>
 
     <dependencies>
@@ -72,7 +73,7 @@
         <dependency>
             <groupId>net.sf.saxon</groupId>
             <artifactId>Saxon-HE</artifactId>
-            <version>9.5.1-8</version>
+            <version>${saxon.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -131,7 +132,6 @@
             </plugins>
         </pluginManagement>
     </build>
-
 
     <profiles>
         <profile>
