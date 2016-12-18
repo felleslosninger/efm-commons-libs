@@ -9,9 +9,7 @@
     <packaging>jar</packaging>
 
     <name>Schematron transformer</name>
-    <description>
-		Transforms schematron files to XSLT files. Contains all XSLT2 artifacts for Schematron.
-	</description>
+    <description>Transforms schematron files to XSLT files. Contains all XSLT2 artifacts for Schematron.</description>
     <url>https://github.com/difi/commons-libs</url>
 
     <scm>
@@ -53,7 +51,7 @@
     <properties>
         <java.encoding>UTF-8</java.encoding>
         <java.version>1.7</java.version>
-        <saxon.version>9.6.0-7</saxon.version>
+        <saxon.version>9.7.0-14</saxon.version>
     </properties>
 
     <dependencies>
@@ -63,23 +61,11 @@
             <version>6.9.6</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>1.7.12</version>
-            <scope>test</scope>
-        </dependency>
 
         <dependency>
             <groupId>net.sf.saxon</groupId>
             <artifactId>Saxon-HE</artifactId>
             <version>${saxon.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.12</version>
         </dependency>
     </dependencies>
 
@@ -101,6 +87,24 @@
                 <version>2.7</version>
                 <configuration>
                     <encoding>${java.encoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxb2-maven-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>xjc</id>
+                        <goals>
+                            <goal>xjc</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <target>2.1</target>
+                    <packageName>no.difi.commons.schematron.jaxb.svrl</packageName>
                 </configuration>
             </plugin>
         </plugins>
