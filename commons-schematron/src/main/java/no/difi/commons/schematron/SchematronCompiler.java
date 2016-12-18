@@ -7,19 +7,25 @@ import javax.xml.transform.stream.StreamSource;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class SchematronCompiler implements Closeable {
 
-    private URIResolver uriResolver = new ClasspathURIResolver("/iso-schematron-xslt2");
-
-    private Processor processor = new Processor(false);
+    private static URIResolver uriResolver = new ClasspathURIResolver("/iso-schematron-xslt2");
 
     private List<XsltExecutable> steps;
 
+    private Processor processor;
+
     public SchematronCompiler() throws SchematronException {
-        steps = Arrays.asList(
+        this(SaxonUtils.PROCESSOR);
+    }
+
+    public SchematronCompiler(Processor processor) throws SchematronException {
+        this.processor = processor;
+        this.steps = Arrays.asList(
                 load("/iso-schematron-xslt2/iso_dsdl_include.xsl"),
                 load("/iso-schematron-xslt2/iso_abstract_expand.xsl"),
                 load("/iso-schematron-xslt2/iso_svrl_for_xslt2.xsl")
@@ -50,10 +56,32 @@ public class SchematronCompiler implements Closeable {
         transform(inputFile.toFile(), outputStream);
     }
 
+    public void transform(File inputFile, OutputStream outputStream) throws SchematronException {
+        try (BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(outputStream)) {
+            XdmDestination destination = new XdmDestination();
+
+            transform(inputFile, destination);
+
+            bufferedOutputStream.write(SaxonUtils.xdmToBytes(destination));
+
+        } catch (IOException e) {
+            throw new SchematronException(String.format("Unable to transform '%s'.", inputFile), e);
+        }
+    }
+
+    public SchematronValidator createValidator(File inputFile) throws SchematronException {
+        XdmDestination destination = new XdmDestination();
+
+        transform(inputFile, destination);
+
+        return new SchematronValidator(SaxonUtils.xdmToInputStream(destination), processor);
+    }
+
     @SuppressWarnings("all")
-    public synchronized void transform(File inputFile, OutputStream outputStream) throws SchematronException {
+    public void transform(File inputFile, Destination destination) throws SchematronException {
         XsltTransformer firstTransformer = null;
         XsltTransformer lastTransformer = null;
+        List<XsltTransformer> xsltTransformers = new ArrayList<>();
 
         for (XsltExecutable xsltExecutable : steps) {
             XsltTransformer xsltTransformer = xsltExecutable.load();
@@ -64,17 +92,18 @@ public class SchematronCompiler implements Closeable {
                 firstTransformer = xsltTransformer;
 
             lastTransformer = xsltTransformer;
+            xsltTransformers.add(xsltTransformer);
         }
 
-        try (BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(outputStream)) {
-            XdmDestination destination = new XdmDestination();
+        try {
             lastTransformer.setDestination(destination);
 
             firstTransformer.setSource(new StreamSource(inputFile));
             firstTransformer.transform();
 
-            bufferedOutputStream.write(destination.getXdmNode().toString().getBytes());
-        } catch (SaxonApiException | IOException e) {
+            for (XsltTransformer xsltTransformer : xsltTransformers)
+                xsltTransformer.close();
+        } catch (SaxonApiException e) {
             throw new SchematronException(String.format("Unable to transform '%s'.", inputFile), e);
         }
     }
@@ -83,8 +112,5 @@ public class SchematronCompiler implements Closeable {
     public void close() throws IOException {
         steps.clear();
         steps = null;
-
-        processor = null;
-        uriResolver = null;
     }
 }
