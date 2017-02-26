@@ -59,7 +59,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <encoding>UTF-8</encoding>
+                    <encoding>${java.encoding}</encoding>
                     <target>2.1</target>
                 </configuration>
             </plugin>

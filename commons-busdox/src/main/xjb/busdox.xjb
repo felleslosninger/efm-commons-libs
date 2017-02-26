@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+               xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+               jaxb:version="2.0">
+    <jaxb:bindings schemaLocation="../xsd/Identifiers-1.0.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="no.difi.commons.busdox.jaxb.identifiers"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+    <jaxb:bindings schemaLocation="../xsd/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="no.difi.commons.busdox.jaxb.wssecurity"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+    <jaxb:bindings schemaLocation="../xsd/ServiceMetadataLocatorTypes-1.0.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="no.difi.commons.busdox.jaxb.sml"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+    <jaxb:bindings schemaLocation="../xsd/ServiceMetadataPublishing-1.0.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="no.difi.commons.busdox.jaxb.smp"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+    <jaxb:bindings schemaLocation="../xsd/ws-addr.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="no.difi.commons.busdox.jaxb.addressing"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+    <jaxb:bindings schemaLocation="../xsd/xmldsig-core-schema.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="no.difi.commons.busdox.jaxb.xmldsig"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+</jaxb:bindings>

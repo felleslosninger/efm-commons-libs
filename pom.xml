@@ -8,7 +8,7 @@
     <version>0.9.4-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>Difi Commons</name>
+    <name>Difi Commons :: Parent</name>
     <url>https://github.com/difi/commons-libs</url>
 
     <scm>

@@ -60,7 +60,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <encoding>UTF-8</encoding>
+                    <encoding>${java.encoding}</encoding>
                     <target>2.1</target>
                 </configuration>
             </plugin>
@@ -84,6 +84,10 @@
                             </wsdlFiles>
                             <wsdlLocation>META-INF/ManageBusinessIdentifierService-1.0.wsdl</wsdlLocation>
                             <staleFile>${project.build.directory}/stale/.stale-wsimport1</staleFile>
+                            <bindingDirectory>src/main/xjb</bindingDirectory>
+                            <bindingFiles>
+                                <bindingFile>bindings-identifier.xml</bindingFile>
+                            </bindingFiles>
                         </configuration>
                     </execution>
                     <execution>
@@ -97,6 +101,10 @@
                             </wsdlFiles>
                             <wsdlLocation>META-INF/ManageServiceMetadataService-1.0.wsdl</wsdlLocation>
                             <staleFile>${project.build.directory}/stale/.stale-wsimport2</staleFile>
+                            <bindingDirectory>src/main/xjb</bindingDirectory>
+                            <bindingFiles>
+                                <bindingFile>bindings-metadata.xml</bindingFile>
+                            </bindingFiles>
                         </configuration>
                     </execution>
                 </executions>
