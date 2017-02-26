@@ -50,7 +50,6 @@
     <properties>
         <java.encoding>UTF-8</java.encoding>
         <java.version>1.7</java.version>
-        <saxon.version>9.7.0-15</saxon.version>
     </properties>
 	
 	<modules>
@@ -72,7 +71,7 @@
             <dependency>
                 <groupId>net.sf.saxon</groupId>
                 <artifactId>Saxon-HE</artifactId>
-                <version>${saxon.version}</version>
+                <version>9.7.0-15</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

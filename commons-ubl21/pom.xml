@@ -14,7 +14,7 @@
 
     <name>Difi Commons :: Universal Business Language (UBL) 2.1</name>
     <description>Universal Business Language (UBL) 2.1 artifacts for Java.</description>
-    <url>https://github.com/difi/commons-libs/commons-ubl21</url>
+    <url>https://github.com/difi/commons-libs/tree/master/commons-ubl21</url>
 
     <issueManagement>
         <url>https://github.com/difi/commons-libs/issues</url>

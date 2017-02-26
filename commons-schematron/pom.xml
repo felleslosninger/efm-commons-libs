@@ -14,7 +14,7 @@
 
     <name>Difi Commons :: Schematron</name>
     <description>Transforms ISO Schematron files to XSLT files. Contains all XSLT2 artifacts for ISO Schematron.</description>
-    <url>https://github.com/difi/commons-libs</url>
+    <url>https://github.com/difi/commons-libs/tree/master/commons-schematron</url>
 
     <issueManagement>
         <url>https://github.com/difi/commons-libs/issues</url>

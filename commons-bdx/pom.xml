@@ -13,7 +13,7 @@
 
     <name>Difi Commons :: BDXR</name>
     <description>BDX artifacts for Java.</description>
-    <url>https://github.com/difi/vefa-commons-libs/tree/master/commons-bdxr</url>
+    <url>https://github.com/difi/commons-libs/tree/master/commons-bdx</url>
 
     <issueManagement>
         <url>https://github.com/difi/commons-libs/issues</url>
