@@ -9,6 +9,7 @@
     <packaging>pom</packaging>
 
     <name>Difi Commons :: Parent</name>
+    <description>Parent project for Difi Commons</description>
     <url>https://github.com/difi/commons-libs</url>
 
     <scm>
