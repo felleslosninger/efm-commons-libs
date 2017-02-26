@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>no.difi.commons</groupId>
+        <artifactId>commons-parent</artifactId>
+        <version>0.9.4-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>commons-busdox</artifactId>
+
+    <name>Difi Commons :: Busdox</name>
+    <description>Busdox artifacts for Java.</description>
+    <url>https://github.com/difi/commons-libs/tree/master/commons-busdox</url>
+
+    <issueManagement>
+        <url>https://github.com/difi/commons-libs/issues</url>
+        <system>GitHub Issues</system>
+    </issueManagement>
+
+    <organization>
+        <name>Norwegian Agency for Public Management and eGovernment (Difi)</name>
+        <url>http://www.difi.no/</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <name>Erlend Klakegg Bergheim</name>
+            <email>erlend.klakegg.bergheim@difi.no</email>
+            <organization>Difi</organization>
+            <roles>
+                <role>Author</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>GNU Lesser General Public License (LGPL), Version 3.0</name>
+            <url>http://www.gnu.org/licenses/lgpl-3.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxb2-maven-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>xjc</id>
+                        <goals>
+                            <goal>xjc</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <target>2.1</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.jvnet.jax-ws-commons</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
+                <version>2.2</version>
+                <executions>
+                    <!-- Use one execution per WSDL file, as the wsdlLocation can specify only one file at a time. The wsdlLocation
+                      is the location how the WSDL file will be referenced in the code (using class.getResource). Also important: use a different
+                      stale file for each WSDL file! Also important: path must be "/WEB-INF/wsdl" because this is how the deployment descriptor
+                      needs it. It must be absolute because class.getResource is used and we therefore need an asbolute path! -->
+                    <execution>
+                        <id>wsimport1</id>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>ManageBusinessIdentifierService-1.0.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <wsdlLocation>META-INF/ManageBusinessIdentifierService-1.0.wsdl</wsdlLocation>
+                            <staleFile>${project.build.directory}/stale/.stale-wsimport1</staleFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>wsimport2</id>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>ManageServiceMetadataService-1.0.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <wsdlLocation>META-INF/ManageServiceMetadataService-1.0.wsdl</wsdlLocation>
+                            <staleFile>${project.build.directory}/stale/.stale-wsimport2</staleFile>
+                        </configuration>
+                    </execution>
+                </executions>
+                <configuration>
+                    <wsdlDirectory>src/main/xsd</wsdlDirectory>
+                    <bindingDirectory>src/main/xjb</bindingDirectory>
+                    <!-- We need to use the same output directory as the JAXB call,
+                         because both wsimport and JAXB are creating code for the
+                         Identifiers-x.y.xsd file! -->
+                    <sourceDestDir>target/generated-sources/jaxb</sourceDestDir>
+                    <xjcArgs>
+                        <xjcArg>-no-header</xjcArg>
+                    </xjcArgs>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.sun.xml.ws</groupId>
+                        <artifactId>jaxws-tools</artifactId>
+                        <version>2.2.10</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

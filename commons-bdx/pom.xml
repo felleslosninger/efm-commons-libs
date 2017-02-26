@@ -9,12 +9,11 @@
         <version>0.9.4-SNAPSHOT</version>
     </parent>
 
-    <artifactId>commons-ubl21</artifactId>
-    <packaging>jar</packaging>
+    <artifactId>commons-bdx</artifactId>
 
-    <name>Difi Commons :: Universal Business Language (UBL) 2.1</name>
-    <description>Universal Business Language (UBL) 2.1 artifacts for Java.</description>
-    <url>https://github.com/difi/commons-libs/commons-ubl21</url>
+    <name>Difi Commons :: BDXR</name>
+    <description>BDX artifacts for Java.</description>
+    <url>https://github.com/difi/vefa-commons-libs/tree/master/commons-bdxr</url>
 
     <issueManagement>
         <url>https://github.com/difi/commons-libs/issues</url>
@@ -22,7 +21,7 @@
     </issueManagement>
 
     <organization>
-        <name>Direktoratet for forvaltning og IKT (Difi)</name>
+        <name>Norwegian Agency for Public Management and eGovernment (Difi)</name>
         <url>http://www.difi.no/</url>
     </organization>
 
@@ -62,10 +61,9 @@
                 <configuration>
                     <encoding>UTF-8</encoding>
                     <target>2.1</target>
-                    <schemaDirectory>src/main/xsd/maindoc</schemaDirectory>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-	
+
 </project>

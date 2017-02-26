@@ -12,16 +12,9 @@
     <artifactId>commons-schematron</artifactId>
     <packaging>jar</packaging>
 
-    <name>Schematron transformer</name>
-    <description>Transforms schematron files to XSLT files. Contains all XSLT2 artifacts for Schematron.</description>
+    <name>Difi Commons :: Schematron</name>
+    <description>Transforms ISO Schematron files to XSLT files. Contains all XSLT2 artifacts for ISO Schematron.</description>
     <url>https://github.com/difi/commons-libs</url>
-
-    <scm>
-        <tag>HEAD</tag>
-        <url>https://github.com/difi/commons-libs</url>
-        <connection>scm:git:https://github.com/difi/commons-libs.git</connection>
-        <developerConnection>scm:git:git@github.com:difi/commons-libs.git</developerConnection>
-    </scm>
 
     <issueManagement>
         <url>https://github.com/difi/commons-libs/issues</url>
