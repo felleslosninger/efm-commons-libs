@@ -5,7 +5,7 @@
 
     <groupId>no.difi.commons</groupId>
     <artifactId>commons-parent</artifactId>
-    <version>0.9.5</version>
+    <version>0.9.6-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Difi Commons :: Parent</name>
@@ -13,7 +13,7 @@
     <url>https://github.com/difi/commons-libs</url>
 
     <scm>
-        <tag>0.9.5</tag>
+        <tag>HEAD</tag>
         <url>https://github.com/difi/commons-libs</url>
         <connection>scm:git:https://github.com/difi/commons-libs.git</connection>
         <developerConnection>scm:git:git@github.com:difi/commons-libs.git</developerConnection>
