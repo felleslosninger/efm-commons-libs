@@ -4,72 +4,72 @@
                jaxb:version="2.0">
     <jaxb:bindings schemaLocation="../xsd/common/CCTS_CCT_SchemaModule-2.1.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="no.difi.commons.ubl21.jaxb.ccts"/>
+            <jaxb:package name="no.difi.commons.ubl2.jaxb.ccts"/>
         </jaxb:schemaBindings>
     </jaxb:bindings>
     <jaxb:bindings schemaLocation="../xsd/common/UBL-CommonAggregateComponents-2.1.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="no.difi.commons.ubl21.jaxb.cac"/>
+            <jaxb:package name="no.difi.commons.ubl2.jaxb.cac"/>
         </jaxb:schemaBindings>
     </jaxb:bindings>
     <jaxb:bindings schemaLocation="../xsd/common/UBL-CommonBasicComponents-2.1.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="no.difi.commons.ubl21.jaxb.cbc"/>
+            <jaxb:package name="no.difi.commons.ubl2.jaxb.cbc"/>
         </jaxb:schemaBindings>
     </jaxb:bindings>
     <!-- <jaxb:bindings schemaLocation="../xsd/common/UBL-CommonExtensionComponents-2.1.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="no.difi.commons.ubl21.jaxb.ext"/>
+            <jaxb:package name="no.difi.commons.ubl2.jaxb.ext"/>
         </jaxb:schemaBindings>
     </jaxb:bindings> -->
     <jaxb:bindings schemaLocation="../xsd/common/UBL-CommonSignatureComponents-2.1.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="no.difi.commons.ubl21.jaxb.csc"/>
+            <jaxb:package name="no.difi.commons.ubl2.jaxb.csc"/>
         </jaxb:schemaBindings>
     </jaxb:bindings>
     <!-- <jaxb:bindings schemaLocation="../xsd/common/UBL-CoreComponentParameters-2.1.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="no.difi.commons.ubl21.jaxb.ccp"/>
+            <jaxb:package name="no.difi.commons.ubl2.jaxb.ccp"/>
         </jaxb:schemaBindings>
     </jaxb:bindings> -->
     <jaxb:bindings schemaLocation="../xsd/common/UBL-ExtensionContentDataType-2.1.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="no.difi.commons.ubl21.jaxb.ecdt"/>
+            <jaxb:package name="no.difi.commons.ubl2.jaxb.ecdt"/>
         </jaxb:schemaBindings>
     </jaxb:bindings>
     <!-- <jaxb:bindings schemaLocation="../xsd/common/UBL-QualifiedDataTypes-2.1.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="no.difi.commons.ubl21.jaxb.qdt"/>
+            <jaxb:package name="no.difi.commons.ubl2.jaxb.qdt"/>
         </jaxb:schemaBindings>
     </jaxb:bindings> -->
     <jaxb:bindings schemaLocation="../xsd/common/UBL-SignatureAggregateComponents-2.1.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="no.difi.commons.ubl21.jaxb.sac"/>
+            <jaxb:package name="no.difi.commons.ubl2.jaxb.sac"/>
         </jaxb:schemaBindings>
     </jaxb:bindings>
     <jaxb:bindings schemaLocation="../xsd/common/UBL-SignatureBasicComponents-2.1.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="no.difi.commons.ubl21.jaxb.sbc"/>
+            <jaxb:package name="no.difi.commons.ubl2.jaxb.sbc"/>
         </jaxb:schemaBindings>
     </jaxb:bindings>
     <jaxb:bindings schemaLocation="../xsd/common/UBL-UnqualifiedDataTypes-2.1.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="no.difi.commons.ubl21.jaxb.udt"/>
+            <jaxb:package name="no.difi.commons.ubl2.jaxb.udt"/>
         </jaxb:schemaBindings>
     </jaxb:bindings>
     <jaxb:bindings schemaLocation="../xsd/common/UBL-XAdESv132-2.1.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="no.difi.commons.ubl21.jaxb.xades.v1_3"/>
+            <jaxb:package name="no.difi.commons.ubl2.jaxb.xades.v1_3"/>
         </jaxb:schemaBindings>
     </jaxb:bindings>
     <jaxb:bindings schemaLocation="../xsd/common/UBL-XAdESv141-2.1.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="no.difi.commons.ubl21.jaxb.xades.v1_4"/>
+            <jaxb:package name="no.difi.commons.ubl2.jaxb.xades.v1_4"/>
         </jaxb:schemaBindings>
     </jaxb:bindings>
     <jaxb:bindings schemaLocation="../xsd/common/UBL-xmldsig-core-schema-2.1.xsd">
         <jaxb:schemaBindings>
-            <jaxb:package name="no.difi.commons.ubl21.jaxb.xmldsig"/>
+            <jaxb:package name="no.difi.commons.ubl2.jaxb.xmldsig"/>
         </jaxb:schemaBindings>
     </jaxb:bindings>
 </jaxb:bindings>
