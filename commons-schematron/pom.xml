@@ -79,7 +79,6 @@
                 <configuration>
                     <encoding>UTF-8</encoding>
                     <target>2.1</target>
-                    <packageName>no.difi.commons.schematron.jaxb.svrl</packageName>
                 </configuration>
             </plugin>
         </plugins>

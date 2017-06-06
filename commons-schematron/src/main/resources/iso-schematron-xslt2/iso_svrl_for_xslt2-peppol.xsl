@@ -152,7 +152,7 @@
 <!-- Select the import statement and adjust the path as 
    necessary for your system.
 -->
-<xsl:import href="iso_schematron_skeleton_for_saxon.xsl"/>
+<xsl:import href="iso_schematron_skeleton_for_saxon-peppol.xsl"/>
  
  <!--
 <xsl:import href="iso_schematron_skeleton_for_xslt1.xsl"/>

@@ -30,7 +30,7 @@
    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
    xmlns:axsl="http://www.w3.org/1999/XSL/TransformAlias">
 
-<xsl:import href="iso_schematron_skeleton_for_saxon.xsl"/>
+<xsl:import href="iso_schematron_skeleton_for_saxon-original.xsl"/>
 
 <xsl:template name="process-prolog">
    <axsl:output method="text" />

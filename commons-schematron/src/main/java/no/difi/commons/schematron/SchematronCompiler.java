@@ -12,15 +12,27 @@ import java.util.List;
 
 public class SchematronCompiler implements Closeable {
 
+    public static final String FLAVOUR_ORIGINAL = "original";
+
+    public static final String FLAVOUR_PEPPOL = "peppol";
+
     private List<XsltExecutable> steps;
 
     private Processor processor;
 
     public SchematronCompiler() throws SchematronException {
-        this(SaxonUtils.PROCESSOR);
+        this(SaxonUtils.PROCESSOR, FLAVOUR_ORIGINAL);
     }
 
     public SchematronCompiler(Processor processor) throws SchematronException {
+        this(processor, FLAVOUR_ORIGINAL);
+    }
+
+    public SchematronCompiler(String flavour) throws SchematronException {
+        this(SaxonUtils.PROCESSOR, flavour);
+    }
+
+    public SchematronCompiler(Processor processor, String flavour) throws SchematronException {
         this.processor = processor;
 
         XsltCompiler xsltCompiler = processor.newXsltCompiler();
@@ -29,7 +41,7 @@ public class SchematronCompiler implements Closeable {
         this.steps = Arrays.asList(
                 load("/iso-schematron-xslt2/iso_dsdl_include.xsl", xsltCompiler),
                 load("/iso-schematron-xslt2/iso_abstract_expand.xsl", xsltCompiler),
-                load("/iso-schematron-xslt2/iso_svrl_for_xslt2.xsl", xsltCompiler)
+                load(String.format("/iso-schematron-xslt2/iso_svrl_for_xslt2-%s.xsl", flavour), xsltCompiler)
         );
     }
 

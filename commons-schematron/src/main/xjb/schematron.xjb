@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0">
+    <jaxb:bindings schemaLocation="../xsd/svrl.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="no.difi.commons.schematron.jaxb.svrl"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+    <jaxb:bindings schemaLocation="../xsd/iso-schematron.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="no.difi.commons.schematron.jaxb"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+    <jaxb:bindings schemaLocation="../xsd/schematron-quickFix.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="no.difi.commons.schematron.jaxb.quickfix"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+</jaxb:bindings>
