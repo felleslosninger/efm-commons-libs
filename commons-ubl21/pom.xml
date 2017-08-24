@@ -50,25 +50,46 @@
         </license>
     </licenses>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>jaxb2-maven-plugin</artifactId>
-                <version>1.6</version>
+                <groupId>org.jvnet.jaxb2.maven2</groupId>
+                <artifactId>maven-jaxb2-plugin</artifactId>
+                <version>0.13.2</version>
                 <executions>
                     <execution>
-                        <id>xjc</id>
+                        <id>xsd</id>
                         <goals>
-                            <goal>xjc</goal>
+                            <goal>generate</goal>
                         </goals>
+                        <configuration>
+                            <extension>true</extension>
+                            <bindingDirectory>src/main/xjb</bindingDirectory>
+                            <schemaDirectory>src/main/xsd/maindoc</schemaDirectory>
+                            <args>
+                                <arg>-Xannotate</arg>
+                            </args>
+                            <plugins>
+                                <plugin>
+                                    <groupId>org.jvnet.jaxb2_commons</groupId>
+                                    <artifactId>jaxb2-basics-annotate</artifactId>
+                                    <version>1.0.2</version>
+                                </plugin>
+                                <plugin>
+                                    <groupId>org.projectlombok</groupId>
+                                    <artifactId>lombok</artifactId>
+                                </plugin>
+                            </plugins>
+                        </configuration>
                     </execution>
                 </executions>
-                <configuration>
-                    <encoding>UTF-8</encoding>
-                    <target>2.1</target>
-                    <schemaDirectory>src/main/xsd/maindoc</schemaDirectory>
-                </configuration>
             </plugin>
         </plugins>
     </build>
