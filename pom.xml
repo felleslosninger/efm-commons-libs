@@ -10,30 +10,50 @@
 
     <name>Difi Commons :: Parent</name>
     <description>Parent project for Difi Commons</description>
-    <url>https://github.com/difi/commons-libs</url>
+    <url>https://github.com/felleslosninger/efm-commons-libs</url>
 
     <scm>
         <tag>HEAD</tag>
-        <url>https://github.com/difi/commons-libs</url>
-        <connection>scm:git:https://github.com/difi/commons-libs.git</connection>
-        <developerConnection>scm:git:git@github.com:difi/commons-libs.git</developerConnection>
+        <url>https://github.com/felleslosninger/efm-commons-libs</url>
+        <connection>scm:git:https://github.com/felleslosninger/efm-commons-libs.git</connection>
+        <developerConnection>scm:git:git@github.com:felleslosninger/efm-commons-libs.git</developerConnection>
     </scm>
 
     <issueManagement>
-        <url>https://github.com/difi/commons-libs/issues</url>
+        <url>https://github.com/felleslosninger/efm-commons-libs/issues</url>
         <system>GitHub Issues</system>
     </issueManagement>
 
     <organization>
-        <name>Direktoratet for forvaltning og IKT (Difi)</name>
-        <url>http://www.difi.no/</url>
+        <name>Digitaliseringsdirektoratet (Digdir)</name>
+        <url>http://www.digdir.no/</url>
     </organization>
+
+    <distributionManagement>
+        <repository>
+            <id>MavenArtifactFeed</id>
+            <url>https://pkgs.dev.azure.com/dificloud/_packaging/MavenArtifactFeed/maven/v1</url>
+        </repository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>MavenArtifactFeed</id>
+            <url>https://pkgs.dev.azure.com/dificloud/_packaging/MavenArtifactFeed/maven/v1</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
     <developers>
         <developer>
             <name>Erlend Klakegg Bergheim</name>
-            <email>erlend.klakegg.bergheim@difi.no</email>
-            <organization>Difi</organization>
+            <email>erlend.klakegg.bergheim@dfo.no</email>
+            <organization>Direktoratet for forvaltning og økonomistyring</organization>
             <roles>
                 <role>Author</role>
             </roles>
@@ -212,16 +232,4 @@
             </build>
         </profile>
     </profiles>
-
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
-	
 </project>
