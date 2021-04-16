@@ -4,6 +4,7 @@ resources:
       type: github
       name: felleslosninger/efm-eproc-pipeline
       endpoint: felleslosninger
+      ref: development
 
 extends:
   template: build-and-deploy-template.yml@efm-eproc-pipeline
@@ -11,14 +12,12 @@ extends:
     environmentRepository: git://eformidling/eformidling
     jdkVersion: 1.8
     buildDockerArtifact: false
+    jiraVersionPrefix: Commons libs
 
 trigger:
   batch: true
   branches:
     include:
-      - development
-      - release-*
-      - master
-      - hotfix-*
+      - '*'
 
 pr: none
