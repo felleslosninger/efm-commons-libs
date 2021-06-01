@@ -13,6 +13,9 @@ extends:
     jdkVersion: 1.8
     buildDockerArtifact: false
     jiraVersionPrefix: Commons libs
+    deployOssrh: true
+    mavenGoals: deploy
+
 
 trigger:
   batch: true
