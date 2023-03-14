@@ -71,7 +71,7 @@
 
     <properties>
         <java.encoding>UTF-8</java.encoding>
-        <java.version>1.7</java.version>
+        <java.version>1.8</java.version>
     </properties>
 	
 	<modules>
